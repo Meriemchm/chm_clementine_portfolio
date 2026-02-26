@@ -17,7 +17,7 @@ export default function ProjectCard({
   link,
 }: ProjectCardProps) {
   return (
-    <Link href={link} className="group relative w-full h-96 rounded-xl overflow-hidden border border-white/10">
+    <Link href={link} className="group relative h-96 rounded-xl overflow-hidden border border-white/10">
       
       {/* Image */}
       <Image

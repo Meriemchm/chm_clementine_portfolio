@@ -12,7 +12,7 @@ import { AboutContact } from "./about-contact";
 
 export const About = () => {
   return (
-    <section id="about" className="relative py-32 px-6 scroll-mt-20">
+    <section id="about" className="relative py-32 md:px-6 px-4 scroll-mt-20">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Header */}
         <SectionTitle title="About Me" />

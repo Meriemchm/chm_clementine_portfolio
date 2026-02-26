@@ -49,7 +49,7 @@ export default function NavbarLinks({ items, onClick }: NavbarItem) {
               key={index}
               href={item.link}
               onClick={onClick}
-              className="hover:text-primary/80 text-xl transition capitalize py-2 px-1 cursor-default select-none"
+              className="hover:text-primary/80 text-xl transition capitalize py-2 px-1 cursor-pointer select-none"
             >
               {item.name}
             </Link>

@@ -21,12 +21,12 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ items }) => {
       {/* Mobile Navbar */}
       <div className="md:hidden rounded-full p-5 flex w-full h-20 justify-between items-center">
         {/* Logo */}
-        <Link href={"/"}>
+        <Link href={"/"} className="flex gap-2">
           <Image
             src="/Ellipse.svg"
             alt="Logo"
-            width={32}
-            height={32}
+            width={8}
+            height={8}
             className="w-8 h-8"
           />
           <p className="capitalize font-extralight text-2xl leading-normal">

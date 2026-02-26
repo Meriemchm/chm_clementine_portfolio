@@ -24,7 +24,7 @@ export const Hero = () => {
     <div ref={containerRef}>
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center px-6"
+        className="relative min-h-screen flex items-center justify-center px-6 mx-auto"
       >
         <div className="container mx-auto text-center">
           {/* Contenu (inchangé) */}
@@ -33,7 +33,7 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-6xl md:text-7xl mb-4">
+            <h1 className="text-5xl md:text-7xl mb-4">
               <span className="text-white">Clémentine Budon</span>
             </h1>
 
@@ -44,12 +44,12 @@ export const Hero = () => {
               transition={{ duration: 1, delay: 0.3 }}
             />
 
-            <h2 className="text-3xl md:text-4xl mb-8 leading-tight text-primary-gradient">
+            <h2 className="text-2xl md:text-4xl mb-8 leading-tight text-primary-gradient">
               Game Designer
             </h2>
 
             <motion.p
-              className="text-xl text-[#f2f2f2]/60 max-w-3xl mx-auto mb-12"
+              className="md:text-xl text-lg text-[#f2f2f2]/60 max-w-3xl mx-auto mb-12"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -79,13 +79,13 @@ export const Hero = () => {
 
         {/* Cercle en bas à gauche */}
         <motion.div
-          className="absolute bottom-20 left-0 w-80 h-80 rounded-full border-2 border-[#f0d784] opacity-20"
+          className="md:block  absolute hidden bottom-20 left-0 w-80 h-80 rounded-full border-2 border-[#f0d784] opacity-20"
           style={{ scale, y: yCircle }}
         />
 
         {/* Carré en haut à droite */}
         <motion.div
-          className="absolute top-0 right-0 w-64 h-64 border-2 border-[#333]"
+          className="md:block absolute hidden top-0 right-0 w-64 h-64 border-2 border-[#333]"
           style={{ rotate: rotateZ, y: ySquare }}
         />
       </section>

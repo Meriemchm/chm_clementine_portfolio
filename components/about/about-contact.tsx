@@ -1,8 +1,12 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 export const AboutContact = () => {
   return (
-    <div className="bg-linear-to-br from-[#1a1a1a] to-[#0d0d0d] border-2 border-[#f0d784] rounded-3xl p-6 space-y-4">
+    <motion.div
+      whileHover={{ scale: 1.02, borderColor: "#f0d784" }}
+      className="bg-linear-to-br from-[#1a1a1a] to-[#0d0d0d] border-2 border-[#f0d784] rounded-3xl p-6 space-y-4"
+    >
       <h3 className=" text-xl text-white text-center mb-4">Quick Contact</h3>
       <div className="space-y-3 text-sm">
         <div>
@@ -23,6 +27,6 @@ export const AboutContact = () => {
           <p className=" text-white">Clémentine Budon</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

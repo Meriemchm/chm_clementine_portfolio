@@ -45,7 +45,7 @@ export const ContactForm = () => {
         <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#f0d784]" />
         <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#f0d784]" />
 
-        <h2 className=" text-3xl mb-8 text-[#f0d784]">
+        <h2 className=" text-3xl mb-8 text-white">
           Send a Message
         </h2>
 
@@ -141,11 +141,11 @@ export const ContactForm = () => {
             <GameButton
               type="submit"
               variant="rounded"
-              size="large"
+              size="medium"
               className="w-full"
               disabled={isSubmitting}
             >
-              <Send className="w-5 h-5" />
+              <Send className="w-6 h-6" />
               {isSubmitting ? "Sending..." : "Send Message"}
             </GameButton>
           </form>

@@ -27,14 +27,22 @@ export default function ProjectMedia({ section }: ProjectMediaProps) {
     onSelect();
   }, [emblaApi]);
 
-  // Gestion des touches clavier pour la lightbox
+  // Gestion clavier lightbox
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!lightboxOpen) return;
+      if (!lightboxOpen || !section.images) return;
+
       if (e.key === "Escape") setLightboxOpen(false);
-      if (e.key === "ArrowLeft") setLightboxIndex((prev) => (prev > 0 ? prev - 1 : section.images!.length - 1));
-      if (e.key === "ArrowRight") setLightboxIndex((prev) => (prev < section.images!.length - 1 ? prev + 1 : 0));
+      if (e.key === "ArrowLeft")
+        setLightboxIndex((prev) =>
+          prev > 0 ? prev - 1 : section.images!.length - 1
+        );
+      if (e.key === "ArrowRight")
+        setLightboxIndex((prev) =>
+          prev < section.images!.length - 1 ? prev + 1 : 0
+        );
     };
+
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [lightboxOpen, section.images]);
@@ -50,23 +58,25 @@ export default function ProjectMedia({ section }: ProjectMediaProps) {
 
   return (
     <>
-      <div className="lg:w-1/2 relative">
-        {/* Viewport */}
+      {/* Carousel */}
+      <div className="w-full lg:w-1/2 relative">
         <div className="overflow-hidden rounded-xl" ref={emblaRef}>
           <div className="flex">
             {section.images.map((img, index) => (
               <div
                 key={index}
-                className="relative flex-[0_0_100%] min-w-0 h-75 group cursor-pointer"
+                className="relative flex-[0_0_100%] min-w-0 aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] group cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
                 <Image
                   src={img}
                   alt={`project image ${index + 1}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-                {/* Overlay avec bouton au survol */}
+
+                {/* Overlay */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <button
                     onClick={(e) => {
@@ -75,7 +85,7 @@ export default function ProjectMedia({ section }: ProjectMediaProps) {
                     }}
                     className="px-4 py-2 bg-primary text-black rounded-md text-sm font-medium hover:bg-primary/80 transition"
                   >
-                    see
+                    See
                   </button>
                 </div>
               </div>
@@ -83,25 +93,25 @@ export default function ProjectMedia({ section }: ProjectMediaProps) {
           </div>
         </div>
 
-        {/* Flèches de navigation du carrousel */}
+        {/* Flèches carousel */}
         {section.images.length > 1 && (
           <>
             <button
               onClick={scrollPrev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-primary transition"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 sm:p-3 rounded-full z-10 hover:bg-primary transition"
             >
-              ←
+              <ChevronLeft size={20} />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-primary transition"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 sm:p-3 rounded-full z-10 hover:bg-primary transition"
             >
-              →
+              <ChevronRight size={20} />
             </button>
           </>
         )}
 
-        {/* Pagination du carrousel */}
+        {/* Pagination */}
         {section.images.length > 1 && (
           <div className="flex justify-center gap-2 mt-4">
             {section.images.map((_, idx) => (
@@ -109,7 +119,9 @@ export default function ProjectMedia({ section }: ProjectMediaProps) {
                 key={idx}
                 onClick={() => emblaApi && emblaApi.scrollTo(idx)}
                 className={`w-3 h-3 rounded-full transition ${
-                  idx === selectedIndex ? "bg-primary scale-125" : "bg-gray-400"
+                  idx === selectedIndex
+                    ? "bg-primary scale-125"
+                    : "bg-gray-400"
                 }`}
               />
             ))}
@@ -117,45 +129,55 @@ export default function ProjectMedia({ section }: ProjectMediaProps) {
         )}
       </div>
 
-      {/* Lightbox modale */}
+      {/* Lightbox */}
       {lightboxOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
-          <div className="relative w-full h-full max-w-6xl max-h-[90vh] flex items-center justify-center">
+          <div className="relative w-full h-[80vh] sm:h-[85vh] max-w-6xl flex items-center justify-center">
             <Image
               src={section.images[lightboxIndex]}
               alt={`project image ${lightboxIndex + 1}`}
               fill
+              sizes="100vw"
               className="object-contain"
               onClick={(e) => e.stopPropagation()}
             />
 
-            {/* Bouton fermeture */}
+            {/* Close */}
             <button
               onClick={closeLightbox}
               className="absolute top-4 right-4 text-white bg-black/50 p-2 rounded-full hover:bg-black/70 transition"
             >
-              <X size={24} />
+              <X size={22} />
             </button>
 
-            {/* Navigation dans la lightbox */}
+            {/* Navigation */}
             {section.images.length > 1 && (
               <>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    setLightboxIndex((prev) => (prev > 0 ? prev - 1 : section.images!.length - 1));
+                    setLightboxIndex((prev) =>
+                      prev > 0
+                        ? prev - 1
+                        : section.images!.length - 1
+                    );
                   }}
                   className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 p-3 rounded-full hover:bg-primary transition"
                 >
                   <ChevronLeft size={24} />
                 </button>
+
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    setLightboxIndex((prev) => (prev < section.images!.length - 1 ? prev + 1 : 0));
+                    setLightboxIndex((prev) =>
+                      prev < section.images!.length - 1
+                        ? prev + 1
+                        : 0
+                    );
                   }}
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/50 p-3 rounded-full hover:bg-primary transition"
                 >
@@ -164,7 +186,7 @@ export default function ProjectMedia({ section }: ProjectMediaProps) {
               </>
             )}
 
-            {/* Indicateur d'image (optionnel) */}
+            {/* Counter */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white bg-black/50 px-3 py-1 rounded-full text-sm">
               {lightboxIndex + 1} / {section.images.length}
             </div>

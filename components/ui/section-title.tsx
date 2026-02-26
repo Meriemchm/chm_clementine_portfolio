@@ -21,7 +21,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-6xl md:text-7xl mb-6 bg-linear-to-r leading-tight from-[#f0d784] to-[#ad8915] bg-clip-text text-transparent">
+      <h2 className="text-5xl md:text-7xl mb-6 bg-linear-to-r leading-tight from-[#f0d784] to-[#ad8915] bg-clip-text text-transparent">
         {title}
       </h2>
       <div className="h-1 w-64 max-w-full mx-auto mb-6 bg-linear-to-r from-transparent via-[#f0d784] to-transparent" />
