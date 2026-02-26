@@ -1,7 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { useGsapFade } from "@/hooks/useGsapFade";
 import { motion } from "framer-motion";
 
 interface SectionTitleProps {
