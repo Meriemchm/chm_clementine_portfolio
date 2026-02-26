@@ -16,8 +16,8 @@ const jura = Jura({
 });
 
 export const metadata: Metadata = {
-  title: "CB",
-  description: "Your gateway to digital excellence.",
+  title: "Clémentine portfolio",
+  description: "Game designer portfolio showcasing my projects and skills.",
 };
 
 export default function RootLayout({
