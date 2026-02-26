@@ -4,10 +4,11 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { Footer } from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
+import ScrollToTopButton from "@/components/ui/scroll-to-to-bottom";
 
 //Google Fonts
 const jura = Jura({
-  weight: ["400", "500", "600", "700"], 
+  weight: ["400", "500", "600", "700"],
   variable: "--font-jura",
   subsets: ["latin"],
   display: "swap",
@@ -24,9 +25,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={` ${jura.variable} antialiased`}
-      >
+      <body className={` ${jura.variable} antialiased`}>
+        <ScrollToTopButton />
         <Toaster position="top-right" />
         <Navbar />
         {children}
