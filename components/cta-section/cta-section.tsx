@@ -9,7 +9,7 @@ export const CtaSection = () => {
     <section className="relative py-32 md:px-6 px-4">
       {/* Image SVG en bas à gauche */}
       <div
-        className="absolute bottom-0 left-0 w-32 h-32 md:w-96 md:h-full"
+        className="absolute md:bottom-0 -bottom-35 left-0 w-72 h-full md:w-96 md:h-full"
       >
         <Image
           src="/vector-cta-section.svg"

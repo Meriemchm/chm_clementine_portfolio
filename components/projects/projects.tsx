@@ -4,7 +4,6 @@ import ProjectCard from "./project-card";
 import { motion } from "framer-motion";
 import { SectionTitle } from "../ui/section-title";
 import Image from "next/image";
-import { Container } from "../ui/container";
 
 export default function Projects() {
   return (
