@@ -5,9 +5,9 @@ export const AboutInfo = () => {
   return (
     <div className="bg-[#1a1a1a] border-2 border-[#333] rounded-3xl p-8">
       <h3
-        className="md:text-5xl text-md mb-6 text-transparent"
+        className="md:text-5xl text-4xl mb-6 text-transparent leading-tight"
         style={{
-          WebkitTextStroke: "0.5px #a3a3a3", // couleur du contour
+          WebkitTextStroke: "0.4px #a3a3a3", // couleur du contour
         }}
       >
         Game Designer
