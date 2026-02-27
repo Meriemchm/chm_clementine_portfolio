@@ -19,7 +19,7 @@ export default function Projects() {
         />
       </div>
 
-      <SectionTitle title="My Projects" />
+      <SectionTitle title="My Projects" description="A collection of games and experiences I've worked on, from competitive runners to VR narratives" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}

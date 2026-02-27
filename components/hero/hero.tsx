@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { GameButton } from "../ui/GameButton";
@@ -54,8 +54,9 @@ export const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Young french designer with a love for elaborate spreadsheets and
-              efficient documentations.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum eget varius lectus. Nunc feugiat mollis condimentum.
+              Praesent.
             </motion.p>
 
             <motion.div
@@ -65,13 +66,10 @@ export const Hero = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               <Link href="/contact">
-              <GameButton
-                variant="gaming"
-                size="large"
-              >
-                <Gamepad2 className="w-6 h-6" />
-                Press Start
-              </GameButton>
+                <GameButton variant="gaming" size="large">
+                  <Gamepad2 className="w-6 h-6" />
+                  Press Start
+                </GameButton>
               </Link>
             </motion.div>
           </motion.div>
