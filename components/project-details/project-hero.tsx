@@ -35,7 +35,7 @@ export default function ProjectHero({ project }: any) {
 
         {/* Title */}
         <motion.h1
-          className="md:text-4xl text-2xl font-semibold text-[#e4c46c] mb-2"
+          className="md:text-4xl text-3xl font-semibold text-[#e4c46c] mb-2"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -131,7 +131,7 @@ function InfoCard({ label, value, icon }: any) {
   return (
     <motion.div
       whileHover={{ scale: 1.05, borderColor: "#f0d784" }}
-      className="bg-[#151515] border border-[#2a2a2a] rounded-xl p-6 w-52 shadow-md"
+      className="bg-[#151515] border border-[#2a2a2a] rounded-xl p-6 md:w-52 w-36 shadow-md"
     >
       <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-linear-to-br from-yellow-500/40 to-yellow-700/30 mb-4 text-primary">
         {icon}
@@ -147,7 +147,7 @@ function SectionTitle({ title, icon }: any) {
   return (
     <div className="flex items-center gap-3 mb-6">
       {icon && <div className="text-primary text-2xl">{icon}</div>}
-      <h2 className="md:text-3xl font-bold text-primary">{title}</h2>
+      <h2 className="md:text-3xl text-xl font-bold text-primary">{title}</h2>
       <div className="flex-1 h-px bg-linear-to-r from-[#e4c46c] to-transparent" />
     </div>
   );
