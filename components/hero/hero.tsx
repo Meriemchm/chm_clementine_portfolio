@@ -82,7 +82,7 @@ export const Hero = () => {
 
       {/* Carré */}
       <motion.div
-        className="hidden md:block absolute top-0 right-0 w-64 h-64 border-2 border-[#333]"
+        className="absolute md:top-0 -top-20 -right-25 md:right-0 w-64 h-64 border-2 border-[#333] -z-50"
         style={{ rotate: rotateZ, y: ySquare }}
       />
     </section>
