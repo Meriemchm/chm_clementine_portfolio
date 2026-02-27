@@ -37,13 +37,13 @@ export const Hero = () => {
           </h1>
 
           <motion.div
-            className="h-1 w-80 sm:w-96 max-w-full mx-auto mb-6 bg-gradient-to-r from-transparent via-[#8c8c8c] to-transparent"
+            className="h-1 w-80 sm:w-96 max-w-full mx-auto mb-6 bg-linear-to-r from-transparent via-[#8c8c8c] to-transparent"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           />
 
-          <h2 className="text-2xl md:text-4xl mb-8 leading-tight text-primary-gradient">
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 leading-tight text-primary-gradient">
             Game Designer
           </h2>
 

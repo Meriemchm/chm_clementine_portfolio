@@ -10,7 +10,14 @@
   --fourthary: #262626;
   --fivethary: #f9e7c1;
 
-  --gradient-primary: linear-gradient(135deg, var(--secondary), var(--primary), var(--thirdary));
+  --gradient-primary: linear-gradient(
+    135deg,
+    #7a5400 0%,
+    #c9971a 25%,
+    #ffd86b 50%,
+    #c9971a 75%,
+    #7a5400 100%
+  );
 }
 
 @theme inline {
