@@ -23,7 +23,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
       </h2>
       <div className="h-1 w-64 max-w-full mx-auto mb-6 bg-linear-to-r from-transparent via-[#f0d784] to-transparent" />
       {description && (
-        <p className="text-xl text-[#f2f2f2]/50 max-w-2xl mx-auto">
+        <p className="md:text-xl text-[#f2f2f2]/50 max-w-2xl mx-auto">
           {description}
         </p>
       )}

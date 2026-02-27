@@ -19,7 +19,7 @@ export default function ObsessionsSection() {
   return (
     <Container>
       <fieldset className="border border-primary rounded-2xl p-6 md:p-10 bg-[#1a1a1a]">
-        <legend className="px-4 text-4xl text-primary font-semibold">
+        <legend className="px-4 md:text-4xl text-2xl text-primary font-semibold">
           My Current Obsessions
         </legend>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
