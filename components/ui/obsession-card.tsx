@@ -19,7 +19,7 @@ export default function ObsessionCard({
     <div className="flex gap-6 py-6 rounded-xl transition duration-300">
       
       {/* Image */}
-      <div className="relative w-[120px] h-[170px] flex-shrink-0">
+      <div className="relative w-30 h-42.5 shrink-0 hover:scale-105 transition-transform duration-300">
         <Image
           src={image}
           alt={title}
