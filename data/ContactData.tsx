@@ -30,6 +30,6 @@ export const ContactData: ContactItem[] = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "Clémentine Budon",
-    href: "https://www.linkedin.com/in/clementine-budon/",
+    href: "https://fr.linkedin.com/in/cl%C3%A9mentine-budon",
   },
 ]

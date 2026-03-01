@@ -43,7 +43,7 @@ export const Hero = () => {
             transition={{ duration: 1, delay: 0.3 }}
           />
 
-          <h2 className="text-2xl md:text-4xl font-bold mb-8 leading-tight text-primary-gradient">
+          <h2 className="text-2xl md:text-4xl font-meduim mb-8 leading-tight text-primary-gradient">
             Game Designer
           </h2>
 
