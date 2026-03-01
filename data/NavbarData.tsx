@@ -1,5 +1,10 @@
 export const NavbarData = [
   {
+    id: 3,
+    name: "Home",
+    link: "/",
+  },
+  {
     id: 1,
     name: "About",
     link: "/#about",

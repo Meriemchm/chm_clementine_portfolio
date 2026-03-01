@@ -1,19 +1,19 @@
 export const ProjectsData = [
   {
     title: "OaSYS",
-    description: "Système intelligent d’analyse et de simulation.",
+    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/Images/project.png",
     link: "/projects/project-oasys",
   },
   {
     title: "Chignik",
-    description: "Expérience immersive interactive.",
+    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/Images/Chignik.png",
     link: "/projects/project-chignik",
   },
   {
     title: "Golf in Wonderland",
-    description: "Jeu 3D stylisé avec environnement fantasy.",
+    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/Images/golf_in_wonderland.png",
     link: "/projects/project-golf-in-wonderland",
   },

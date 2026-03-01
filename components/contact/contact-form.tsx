@@ -24,14 +24,17 @@ export const ContactForm = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    await fetch(process.env.NEXT_PUBLIC_CONTACT_FORM_URL!, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
+    setIsSubmitted(true);
     reset();
-
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 3000);
   };
-
   return (
     <motion.div
       initial={{ opacity: 0, x: -30 }}
@@ -45,9 +48,7 @@ export const ContactForm = () => {
         <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#f0d784]" />
         <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#f0d784]" />
 
-        <h2 className=" text-3xl mb-8 text-white">
-          Send a Message
-        </h2>
+        <h2 className=" text-3xl mb-8 text-white">Send a Message</h2>
 
         {isSubmitted ? (
           <motion.div
@@ -63,11 +64,7 @@ export const ContactForm = () => {
             </p>
           </motion.div>
         ) : (
-          <form
-            action={process.env.NEXT_PUBLIC_CONTACT_FORM_URL}
-            method="POST"
-            className="space-y-6"
-          >
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* NAME */}
             <div>
               <label className="block text-sm text-[#f0d784] mb-2">
@@ -139,7 +136,6 @@ export const ContactForm = () => {
             </div>
 
             <GameButton
-              type="submit"
               variant="rounded"
               size="medium"
               className="w-full"
