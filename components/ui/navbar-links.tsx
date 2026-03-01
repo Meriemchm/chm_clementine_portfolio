@@ -48,7 +48,15 @@ export default function NavbarLinks({ items, onClick }: NavbarItem) {
             <Link
               key={index}
               href={item.link}
-              onClick={onClick}
+              onClick={(e) => {
+                if (item.link === "/#about") {
+                  setTimeout(() => {
+                    window.history.replaceState(null, "", "/");
+                  }, 800); // temps suffisant pour que le scroll se fasse
+                }
+
+                if (onClick) onClick();
+              }}
               className="hover:text-primary/80 text-xl transition capitalize py-2 px-1 cursor-pointer select-none"
             >
               {item.name}
