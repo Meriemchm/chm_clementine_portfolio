@@ -24,7 +24,7 @@ export const Hero = () => {
     <section
       ref={containerRef}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen pt-30 md:pt-0 flex items-center justify-center overflow-hidden"
     >
       <div className="w-full max-w-6xl mx-auto px-6 text-center">
         <motion.div
