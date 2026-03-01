@@ -16,21 +16,46 @@ const jura = Jura({
 });
 
 export const metadata: Metadata = {
-  title: "Clémentine portfolio",
-  description: "Game designer portfolio showcasing my projects and skills.",
+  title: {
+    default: "Clémentine Portfolio",
+    template: "%s | Clémentine Portfolio",
+  },
+  description:
+    "Game designer portfolio showcasing projects, UX and game design skills.",
+  keywords: ["game design", "portfolio", "game designer", "ux", "level design"],
+  authors: [{ name: "Clémentine" }],
+  openGraph: {
+    title: "Clémentine Portfolio",
+    description: "Game designer portfolio showcasing my work",
+    url: "https://ton-site.com",
+    siteName: "Clémentine Portfolio",
+    images: ["/Ellipse.svg"],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clémentine Portfolio",
+    description: "Game designer portfolio",
+    images: ["/Ellipse.svg"],
+  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={` ${jura.variable} antialiased`}>
         <ScrollToTopButton />
         <Toaster position="top-right" />
-        <Navbar />
-        {children}
-        <Footer />
+        <header>
+          <Navbar />
+        </header>
+        <main> {children}</main>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
